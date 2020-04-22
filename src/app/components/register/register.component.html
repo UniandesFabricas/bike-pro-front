@@ -1,0 +1,48 @@
+<ab-banner></ab-banner>
+<div class="contain">
+    <div class="row">
+        <div class="col-12 text-title">Bienvenido</div>
+        <div class="col-12 text-information">Te invitamos a ser parte activa de nuestro gran equipo, regístrate y
+            empieza a vivir y disfrutar de los servicios de BikePro.</div>
+    </div>
+    <form [formGroup]="registerForm">
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style"type="text" id="names" name="names" formControlName="names" required
+                (keyup)="setValueField('names', $event.target.value);" placeholder="Nombres">
+        </div>
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style"type="text" id="lastNames" name="lastNames" formControlName="lastNames"
+                required (keyup)="setValueField('lastNames', $event.target.value);"  placeholder="Apellidos">
+        </div>
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style"type="text" id="email" name="email" formControlName="email" required
+                (keyup)="setValueField('email', $event.target.value);"  placeholder="Email">
+        </div>
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style"type="text" id="phone" name="phone" formControlName="phone" required
+                (keyup)="setValueField('phone', $event.target.value);"  placeholder="Teléfono">
+        </div>
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style"type="text" id="gender" name="gender" formControlName="gender" required
+                (keyup)="setValueField('gender', $event.target.value);"  placeholder="Género">
+        </div>
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style"type="text" id="bornDate" name="bornDate" formControlName="bornDate"
+                required (keyup)="setValueField('bornDate', $event.target.value);"  placeholder="Fecha de Nacimiento">
+        </div>
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style"type="text" id="password" name="password" formControlName="password"
+                required (keyup)="setValueField('password', $event.target.value);"  placeholder="Contraseña">
+        </div>
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style"type="text" id="rePassword" name="rePassword" formControlName="rePassword"
+                required (keyup)="setValueField('rePassword', $event.target.value);"  placeholder="Contraseña">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 text-center">
+                <button (click)="update()" class="btn"
+                    [disabled]="!activeBtn">Registrarme</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+@import "../../../assets/styles/fonts.css";
+@import "../../../assets/styles/icons.css";
+@import "../../../assets/styles/global.css";
+
+.input-style {
+    border: 1px solid#8a8b8c;
+    border-radius: 3px;
+    margin-top: 5px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color:white;
+    border: 1px;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    background-color: #4c7a34;
+    font-weight: bold;
+}

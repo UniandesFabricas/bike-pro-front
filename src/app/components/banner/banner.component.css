@@ -1,0 +1,67 @@
+.green-app {
+    color: #79DE67;
+}
+
+.yellow-app{
+    color: #F4EB49;
+}
+.margin-zero {
+    margin: 0;
+}
+
+
+.icon-bycicle {
+    background:  no-repeat url("..\..\..\assets\images\bycicle-yellow.png");
+    background-size: contain;
+    background-position: center;
+}
+
+.icon-home {
+    background:  no-repeat url("..\..\..\assets\images\home.png");
+    background-size: contain;
+    background-position: center;
+}
+
+.position-icon {
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    margin: -10% 0% 0% 80%
+}
+
+.text-profile{
+    color: #F4EB49;
+    margin: -6% 0% 0% 27%;
+    font-size: 30px;
+    font-weight: bolder;
+    font-style: oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/**tablets**/
+@media only screen and (max-width: 1024px) {
+    .position-icon {
+        height: 30px;
+        margin: -10% 0% 0% 80%
+    }
+    
+    .text-profile{
+        margin: -6% 0% 0% 24%;
+        font-size: 25px;
+    }
+}
+
+  /**mobile**/
+@media only screen and (max-width: 767px) {
+    .position-icon {
+        height: 15px;
+        margin: -11% 0% 0% 80%
+    }
+    
+    .text-profile{
+        margin: -6.5% 0% 0% 23%;
+        font-size: 12px;
+    }
+}
+
