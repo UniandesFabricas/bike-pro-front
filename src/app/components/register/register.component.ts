@@ -33,4 +33,10 @@ export class RegisterComponent implements OnInit {
     this.activeBtn = this.registerForm.status === 'VALID' ? true : false;
   }
 
+
+  public update() {
+    console.log('btn register');
+  }
+
+
 }
