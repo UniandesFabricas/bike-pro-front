@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'ab-banner',
@@ -8,9 +9,13 @@ import { Router } from '@angular/router';
 })
 export class BannerComponent implements OnInit {
 
+  title:string;
+
   constructor(private route: Router) { }
 
   ngOnInit(): void {
+    this.title = environment.product;
+
   }
 
   goHome() {

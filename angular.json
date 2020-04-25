@@ -56,6 +56,30 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "club": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.club.ts"
+                }
+              ]
+            },
+            "rental": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.rental.ts"
+                }
+              ]
+            },
+            "social": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.social.ts"
+                }
+              ]
             }
           }
         },
@@ -67,6 +91,15 @@
           "configurations": {
             "production": {
               "browserTarget": "bike-pro-front:build:production"
+            },
+            "club": {
+              "browserTarget": "bike-pro-front:build:club"
+            },
+            "rental": {
+              "browserTarget": "bike-pro-front:build:rental"
+            },
+            "social": {
+              "browserTarget": "bike-pro-front:build:social"
             }
           }
         },
