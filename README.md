@@ -12,11 +12,41 @@ npm start
 
 ## Ejecucion por tipo de producto
 
+### Deploy
+
+ng build -c club
+
+ng build -c rental
+
+ng build -c social
+
+### serve
+
 ng serve -c club
 
 ng serve -c rental
 
 ng serve -c social
+
+
+## Firebase
+
+### Deploy
+
+firebase deploy --only hosting:club
+
+firebase deploy --only hosting:rental
+
+firebase deploy --only hosting:social
+
+### serve
+
+firebase serve --only hosting:club
+
+firebase serve --only hosting:rental
+
+firebase serve --only hosting:social
+
 
 # Documentacion
 

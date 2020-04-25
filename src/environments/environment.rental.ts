@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  product: 'rental'
+  product: 'Alquiler'
 };
