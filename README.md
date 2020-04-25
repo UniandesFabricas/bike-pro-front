@@ -31,6 +31,8 @@ ng serve -c social
 
 ## Firebase
 
+Antes de realizar deploy se debe revisar en el archivo (firebase.json) el target del producto asociado y cambiarlo segun el que se vaya a compilar
+
 ### Deploy
 
 firebase deploy --only hosting:club
