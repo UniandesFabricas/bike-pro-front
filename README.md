@@ -10,6 +10,14 @@ npm install
 
 npm start
 
+## Ejecucion por tipo de producto
+
+ng serve -c club
+
+ng serve -c rental
+
+ng serve -c social
+
 # Documentacion
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
