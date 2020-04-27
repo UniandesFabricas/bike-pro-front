@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "default": "bikepro-27db5"
+  },
+  "targets": {
+    "bikepro-27db5": {
+      "hosting": {
+        "social": [
+          "bikepro-social"
+        ],
+        "club": [
+          "bikepro-club"
+        ],
+        "rental": [
+          "bikepro-rental"
+        ]
+      }
+    }
+  }
+}
