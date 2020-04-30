@@ -1,4 +1,5 @@
+import { Products } from '../app/enums/products.enum';
 export const environment = {
   production: true,
-  product: 'Alquiler'
+  product: Products.Alquiler
 };
