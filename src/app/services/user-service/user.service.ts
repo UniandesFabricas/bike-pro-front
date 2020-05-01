@@ -10,7 +10,7 @@ export class UserService {
   constructor(private httpService: HttpService) { }
 
   createUser(data): Observable<any> {
-    const dataEnviar = {
+    const dataSend = {
       username: 'emantilla',
       password: 'prueba',
       name: 'elkin',
@@ -22,7 +22,7 @@ export class UserService {
         type: 'CEDULA'
       }
     };
-    return this.httpService.postJsonWhithoutCredentials('person', dataEnviar).map(
+    return this.httpService.postJsonWhithoutCredentials('person', dataSend).map(
       response => {
         return response;
       }, error => {

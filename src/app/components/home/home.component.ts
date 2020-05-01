@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {UserService} from '../../services/user-service/user.service';
 
 @Component({
   selector: 'ab-home',
@@ -8,9 +9,16 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private userService: UserService) { }
 
   ngOnInit(): void {
+  }
+
+  registrar(){
+    console.log('entro');
+    this.userService.createUser(null).subscribe(data => {
+      console.log('data', data);
+    });
   }
 
   redirect(routePath) {
