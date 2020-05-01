@@ -15,6 +15,8 @@ export class HttpService {
   baseUrl = environment.urlBack;
 
   postJsonWhithoutCredentials(url, data): Observable<HttpResponse<string>> {
+    console.log('http url ', this.baseUrl + url);
+
     const httpHeaders = new HttpHeaders({
       'Content-Type' : 'application/json'
     });

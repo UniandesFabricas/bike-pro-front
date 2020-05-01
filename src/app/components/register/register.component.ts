@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user-service/user.service';
 
 @Component({
   selector: 'ab-register',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
   activeBtn = false;
   selected: string;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
 
@@ -22,7 +23,6 @@ export class RegisterComponent implements OnInit {
       typeDocument:  ['', Validators.compose([Validators.required])],
       numberDocument:  ['', Validators.compose([Validators.required])],
       email:  ['', Validators.compose([Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])],
-      gender:  ['', Validators.compose([Validators.required])],
       bornDate:  ['', Validators.compose([Validators.required])],
       password:  ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       rePassword:  ['', Validators.compose([Validators.required, Validators.minLength(8)])],
@@ -51,6 +51,13 @@ export class RegisterComponent implements OnInit {
       }
     };
 
+    this.userService.createUser(jsonRequest).subscribe(
+        response => {
+          alert('Usuario creado satisfactoriamente');
+        }, error => {
+          alert('Error creando el usuario, intente nuevamente');
+        }
+      );
   }
 
 }

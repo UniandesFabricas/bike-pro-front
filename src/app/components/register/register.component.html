@@ -34,15 +34,6 @@
                 (keyup)="setValueField('email', $event.target.value);"  placeholder="Email">
         </div>
         <div class="row justify-content-center">
-            <mat-form-field class="col-10 col-md-4 input-style">
-                <mat-label *ngIf="selected === undefined">Género</mat-label>
-                <mat-select [(value)]="selected" (selectionChange) ="setValueField('gender', selected);" formControlName="gender" id="gender" name="gender">
-                  <mat-option value="Femenino">Femenino</mat-option>
-                  <mat-option value="Masculino">Masculino</mat-option>
-                </mat-select>
-              </mat-form-field>
-        </div>
-        <div class="row justify-content-center">
           <mat-form-field class="col-10 col-md-4 input-style ">
               <input matInput class="black-color" [matDatepicker]="picker" (dateInput)="setValueField('bornDate', $event);"
                   (dateChange)="setValueField('bornDate', $event);" [placeholder]="'Fecha nacimiento'"
