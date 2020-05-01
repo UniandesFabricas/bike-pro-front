@@ -9,7 +9,7 @@ export const environment = {
 
   // ------ CARACTERISTICAS -------//
   // BUSQUEDA
-  busqueda_bicicletas: false,
+  busqueda_bicicletas: true,
   busqueda_rutasCompartidas: true,​
   busqueda_eventosPrivados: true,
   // INSCRIPCION
