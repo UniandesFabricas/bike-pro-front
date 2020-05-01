@@ -41,6 +41,7 @@ export class RegisterComponent implements OnInit {
     this.activeBtn = this.registerForm.status === 'VALID' ? true : false;
     if (field === 'bornDate') {
       this.placeHolderDate = '';
+      this.formatDate();
     }
   }
 
@@ -66,6 +67,13 @@ export class RegisterComponent implements OnInit {
         alert('Error creando el usuario, intente nuevamente');
       }
     );
+  }
+
+  public formatDate() {
+    const month = this.registerForm.get('bornDate').value.value.getMonth() + 1;
+    const day = this.registerForm.get('bornDate').value.value.getDate();
+    const year = this.registerForm.get('bornDate').value.value.getFullYear();
+    this.registerForm.get('bornDate').setValue(year + '-' + month + '-' + day + '-' + 'T00:00:00.000+0000');
   }
 
 }

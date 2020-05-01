@@ -9,6 +9,7 @@ import { environment } from '../../../environments/environment';
 })
 export class AccountComponent implements OnInit {
 
+  showAll = true;
   inscripcion_registro:boolean
   inscripcion_autenticacion:boolean
   inscripcion_pagos:boolean
@@ -16,6 +17,8 @@ export class AccountComponent implements OnInit {
   constructor(private route: Router) { }
 
   ngOnInit(): void {
+    this.showAll = sessionStorage.getItem('userAuth') !== undefined && sessionStorage.getItem('userAuth') !== null
+     && sessionStorage.getItem('userAuth') === 'true' ? false : true;
     this.inscripcion_registro = environment.inscripcion_registro;
     this.inscripcion_autenticacion = environment.inscripcion_autenticacion;
     this.inscripcion_pagos = environment.inscripcion_pagos;

@@ -4,13 +4,13 @@
         <div class="col-12 text-title text-center">Disfruta y arma tu mejor plan</div>
     </div>
     <div class="row margin-dots justify-content-center">
-        <div *ngIf="inscripcion_registro" class="col-8 col-md-3 col-lg-2 text-center">
+        <div *ngIf="inscripcion_registro && showAll" class="col-8 col-md-3 col-lg-2 text-center">
             <div class="dot" (click)="redirect('register')">
                 <div class="icon-register postion-icon-dot"></div>
             </div>
             <div class="text-option">Registro</div>
         </div>
-        <div *ngIf="inscripcion_autenticacion" class="col-8 col-md-3 col-lg-2 text-center">
+        <div *ngIf="inscripcion_autenticacion && showAll" class="col-8 col-md-3 col-lg-2 text-center">
             <div class="dot" (click)="redirect('login')">
                 <div class="icon-login postion-icon-dot"></div>
             </div>
