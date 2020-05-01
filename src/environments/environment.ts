@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false,
-  product: 'rental'
+  product: 'rental',
+
+  //------ CARACTERISTICAS -------//
+  // BUSQUEDA
+  busqueda_bicicletas: false,
+  busqueda_rutasCompartidas: true,​
+  busqueda_eventosPrivados: true,
+  // INSCRIPCION
+
+  // COMUNIDAD
 };
 
 /*

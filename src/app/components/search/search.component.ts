@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Products } from '../../enums/products.enum';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'ab-search',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  searchBicycle:boolean
+
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
+    this.searchBicycle = environment.busqueda_bicicletas;
+  }
+
+  redirect(routePath) {
+    console.log('routePath', routePath);
+    this.route.navigate([routePath]);
   }
 
 }

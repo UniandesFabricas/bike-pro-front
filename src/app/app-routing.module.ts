@@ -5,6 +5,7 @@ import { SearchComponent } from './components/search/search.component';
 import { AccountComponent } from './components/account/account.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CommunityComponent } from './components/community/community.component';
+import { MapsComponent } from './components/maps/maps.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'account', component: AccountComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'maps', component: MapsComponent },
 ];
 
 @NgModule({
