@@ -1,0 +1,19 @@
+<ab-banner></ab-banner>
+<div class="contain">
+    <form [formGroup]="loginForm" class="position-form">
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style" type="text" id="user" name="user" formControlName="user" required
+                (keyup)="setValueField('user', $event.target.value);" placeholder="Usuario">
+        </div>
+        <div class="row justify-content-center">
+            <input class="col-10 col-md-4 input-style" type="password" id="password" name="password" formControlName="password"
+                required (keyup)="setValueField('password', $event.target.value);"  placeholder="Contraseña">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 text-center">
+                <button (click)="loginUser()" class="btn"
+                    [disabled]="!activeBtn">Ingresar</button>
+            </div>
+        </div>
+    </form>
+</div>

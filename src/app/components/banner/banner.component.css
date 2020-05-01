@@ -9,6 +9,9 @@
     margin: 0;
 }
 
+.width-header{
+  width: 100%;
+}
 
 .icon-bycicle {
     background:  no-repeat url("..\..\..\assets\images\bycicle-yellow.png");
@@ -45,7 +48,7 @@
         height: 30px;
         margin: -10% 0% 0% 80%
     }
-    
+
     .text-profile{
         margin: -6% 0% 0% 24%;
         font-size: 25px;
@@ -58,7 +61,7 @@
         height: 15px;
         margin: -11% 0% 0% 80%
     }
-    
+
     .text-profile{
         margin: -6.5% 0% 0% 23%;
         font-size: 12px;

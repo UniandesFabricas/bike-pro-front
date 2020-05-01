@@ -5,42 +5,51 @@
         <div class="col-12 text-information">Te invitamos a ser parte activa de nuestro gran equipo, regístrate y
             empieza a vivir y disfrutar de los servicios de BikePro.</div>
     </div>
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm" class="position-form">
         <div class="row justify-content-center">
-            <input class="col-10 col-md-4 input-style"type="text" id="names" name="names" formControlName="names" required
-                (keyup)="setValueField('names', $event.target.value);" placeholder="Nombres">
+            <input class="col-10 col-md-4 input-style"type="text" id="userName" name="userName" formControlName="userName" required
+                (keyup)="setValueField('userName', $event.target.value);" placeholder="Usuario">
         </div>
         <div class="row justify-content-center">
-            <input class="col-10 col-md-4 input-style"type="text" id="lastNames" name="lastNames" formControlName="lastNames"
-                required (keyup)="setValueField('lastNames', $event.target.value);"  placeholder="Apellidos">
+            <input class="col-10 col-md-4 input-style"type="text" id="name" name="name" formControlName="name"
+                required (keyup)="setValueField('name', $event.target.value);"  placeholder="Nombres y apellidos">
         </div>
+        <div class="row justify-content-center">
+          <mat-form-field class="col-10 col-md-4 input-style">
+              <mat-label *ngIf="selected === undefined">Tipo de documento</mat-label>
+              <mat-select [(value)]="selected" (selectionChange) ="setValueField('typeDocument', selected);" formControlName="typeDocument" id="gender" name="gender">
+                <mat-option *ngFor="let item of arrayTypeDocs" value="item.value">{{item.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+      </div>
+      <div class="row justify-content-center">
+        <input class="col-10 col-md-4 input-style"type="text" id="numberDocument" name="numberDocument" formControlName="numberDocument" required
+            (keyup)="setValueField('numberDocument', $event.target.value);" placeholder="Número de documento">
+    </div>
         <div class="row justify-content-center">
             <input class="col-10 col-md-4 input-style"type="text" id="email" name="email" formControlName="email" required
                 (keyup)="setValueField('email', $event.target.value);"  placeholder="Email">
         </div>
         <div class="row justify-content-center">
-            <input class="col-10 col-md-4 input-style"type="text" id="phone" name="phone" formControlName="phone" required
-                (keyup)="setValueField('phone', $event.target.value);"  placeholder="Teléfono">
-        </div>
+          <mat-form-field class="col-10 col-md-4 input-style ">
+              <input matInput class="black-color" [matDatepicker]="picker" (dateInput)="setValueField('bornDate', $event);"
+                  (dateChange)="setValueField('bornDate', $event);" [placeholder]="placeHolderDate"
+                  disabled>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker disabled="false"></mat-datepicker>
+          </mat-form-field>
+      </div>
         <div class="row justify-content-center">
-            <input class="col-10 col-md-4 input-style"type="text" id="gender" name="gender" formControlName="gender" required
-                (keyup)="setValueField('gender', $event.target.value);"  placeholder="Género">
-        </div>
-        <div class="row justify-content-center">
-            <input class="col-10 col-md-4 input-style"type="text" id="bornDate" name="bornDate" formControlName="bornDate"
-                required (keyup)="setValueField('bornDate', $event.target.value);"  placeholder="Fecha de Nacimiento">
-        </div>
-        <div class="row justify-content-center">
-            <input class="col-10 col-md-4 input-style"type="text" id="password" name="password" formControlName="password"
+            <input class="col-10 col-md-4 input-style" type="password" id="password" name="password" formControlName="password"
                 required (keyup)="setValueField('password', $event.target.value);"  placeholder="Contraseña">
         </div>
         <div class="row justify-content-center">
-            <input class="col-10 col-md-4 input-style"type="text" id="rePassword" name="rePassword" formControlName="rePassword"
+            <input class="col-10 col-md-4 input-style" type="password" id="rePassword" name="rePassword" formControlName="rePassword"
                 required (keyup)="setValueField('rePassword', $event.target.value);"  placeholder="Contraseña">
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center">
-                <button (click)="update()" class="btn"
+                <button (click)="registerUser()" class="btn"
                     [disabled]="!activeBtn">Registrarme</button>
             </div>
         </div>

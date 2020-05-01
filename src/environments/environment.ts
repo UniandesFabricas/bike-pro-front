@@ -5,8 +5,9 @@
 export const environment = {
   production: false,
   product: 'rental',
+  urlBack: 'http://ec2-18-237-88-127.us-west-2.compute.amazonaws.com:8080/BikePro/',
 
-  //------ CARACTERISTICAS -------//
+  // ------ CARACTERISTICAS -------//
   // BUSQUEDA
   busqueda_bicicletas: false,
   busqueda_rutasCompartidas: true,​

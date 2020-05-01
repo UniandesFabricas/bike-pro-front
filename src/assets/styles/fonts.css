@@ -9,11 +9,47 @@
     font-family: revert;
     font-size: 15px;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 
 .text-information{
     color: #4c7a34;
     font-family: revert;
+    text-align: justify;
     font-size: 15px;
+}
+
+
+
+/**tablets**/
+@media only screen and (max-width: 1024px) {
+    .text-title{
+        font-size: 25px;
+    }
+    
+    .text-option{
+        font-size: 15px;
+    }
+    
+    .text-information{
+        font-size: 15px;
+    }
+    
+}
+
+  /**mobile**/
+@media only screen and (max-width: 767px) {
+    .text-title{
+        font-size: 20px;
+    }
+    
+    .text-option{
+        font-size: 12px;
+    }
+    
+    .text-information{
+        font-size: 12px;
+    }
+    
 }
