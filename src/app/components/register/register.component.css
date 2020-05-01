@@ -27,6 +27,14 @@
     margin-top: 30px;
 }
 
-::ng-deep .mat-form-field-label-wrapper {
+::ng-deep .mat-form-field-underline {
     display: none;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  margin-top: -10px;
+}
+
+.black-color {
+  color: black;
 }

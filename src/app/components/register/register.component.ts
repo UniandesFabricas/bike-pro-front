@@ -17,10 +17,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
 
     this.registerForm = this.fb.group({
-      names:  ['', Validators.compose([Validators.required])],
-      lastNames:  ['', Validators.compose([Validators.required])],
+      userName:  ['', Validators.compose([Validators.required])],
+      name:  ['', Validators.compose([Validators.required])],
+      typeDocument:  ['', Validators.compose([Validators.required])],
+      numberDocument:  ['', Validators.compose([Validators.required])],
       email:  ['', Validators.compose([Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])],
-      phone:  ['', Validators.compose([Validators.required])],
       gender:  ['', Validators.compose([Validators.required])],
       bornDate:  ['', Validators.compose([Validators.required])],
       password:  ['', Validators.compose([Validators.required, Validators.minLength(8)])],
@@ -30,14 +31,26 @@ export class RegisterComponent implements OnInit {
 
 
   setValueField(field, value) {
+    console.log('field' , field , '=', value);
     this.registerForm.get(field).setValue(value);
     this.activeBtn = this.registerForm.status === 'VALID' ? true : false;
   }
 
 
-  public update() {
-    console.log('btn register');
-  }
+  public registerUser() {
+    const jsonRequest = {
+      username: this.registerForm.get('userName').value,
+      password: this.registerForm.get('password').value,
+      name: this.registerForm.get('name').value,
+      email: this.registerForm.get('email').value,
+      birthdate: this.registerForm.get('bornDate').value,
+      identification: {
+        id: 1,
+        number: this.registerForm.get('numberDocument').value,
+        type: this.registerForm.get('typeDocument').value
+      }
+    };
 
+  }
 
 }

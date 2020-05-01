@@ -14,6 +14,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MapsComponent } from './components/maps/maps.component';
+import { LoginComponent } from './components/login/login.component';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -25,7 +30,8 @@ import { MapsComponent } from './components/maps/maps.component';
     SearchComponent,
     AccountComponent,
     CommunityComponent,
-    MapsComponent
+    MapsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +40,15 @@ import { MapsComponent } from './components/maps/maps.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
