@@ -12,6 +12,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   activeBtn = false;
   selected: string;
+  placeHolderDate = 'Fecha de nacimiento';
 
   constructor(private fb: FormBuilder, private userService: UserService) { }
 
@@ -31,9 +32,11 @@ export class RegisterComponent implements OnInit {
 
 
   setValueField(field, value) {
-    console.log('field' , field , '=', value);
     this.registerForm.get(field).setValue(value);
     this.activeBtn = this.registerForm.status === 'VALID' ? true : false;
+    if (field === 'bornDate') {
+      this.placeHolderDate = '';
+    }
   }
 
 

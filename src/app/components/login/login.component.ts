@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user-service/user.service';
 
 @Component({
   selector: 'ab-login',
@@ -7,9 +9,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup;
+  activeBtn = false;
 
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private userService: UserService) { }
+
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      user:  ['', Validators.compose([Validators.required])],
+      password:  ['', Validators.compose([Validators.required])]
+    });
   }
+
+
+  setValueField(field, value) {
+    this.loginForm.get(field).setValue(value);
+    this.activeBtn = this.loginForm.status === 'VALID' ? true : false;
+  }
+
+
+  public loginUser() {
+    const jsonRequest = {
+      user: this.loginForm.get('userName').value,
+      password: this.loginForm.get('password').value,
+    };
+
+    this.userService.createUser(jsonRequest).subscribe(
+        response => {
+          alert('Usuario creado satisfactoriamente');
+        }, error => {
+          alert('Error creando el usuario, intente nuevamente');
+        }
+      );
+  }
+
 
 }
