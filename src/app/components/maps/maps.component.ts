@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
+import { SearchService } from '../../services/search-service/search.service'
 
 
 @Component({
@@ -13,7 +14,7 @@ export class MapsComponent implements OnInit {
 
   infoContent = ''
   markers = []
-  zoom = 15
+  zoom = 14
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
     //mapTypeId: 'ROADMAP',
@@ -24,7 +25,8 @@ export class MapsComponent implements OnInit {
     //minZoom: 8,
   }
 
-  constructor() { }
+  constructor(
+    private searchService:SearchService) { }
 
   ngOnInit(): void {
 
@@ -40,24 +42,34 @@ export class MapsComponent implements OnInit {
   }
 
 
+  /**
+   * Agrega marcadores al mapa
+   */
   addMarker() {
-    this.markers.push({
-      position: {
-        lat: 4.6399488,
-        lng: -74.0622336,
-      },
-      label: {
-        color: 'red',
-        text: 'Marker label ' + (this.markers.length + 1),
-      },
-      title: 'Marker title ' + (this.markers.length + 1),
-      info: 'Marker info ' + (this.markers.length + 1),
-      options: { animation: google.maps.Animation.BOUNCE },
-    })
+    this.searchService.searchStations().forEach(station => {
+
+      this.markers.push({
+        position: {
+          lat: station.startPoint.latitude,
+          lng: station.startPoint.longitude,
+        },
+        label: {
+          color: 'red',
+          text: station.name,
+        },
+        title: station.name,
+        info: station.description,
+        options: { animation: google.maps.Animation.BOUNCE },
+      })
+
+});
+
+
   }
 
   click(event: google.maps.MouseEvent) {
-    console.log(event)
+
+    console.log(JSON.stringify(event));
   }
 
   openInfo(marker: MapMarker, content) {
