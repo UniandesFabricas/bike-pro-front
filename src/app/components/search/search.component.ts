@@ -10,12 +10,16 @@ import { environment } from '../../../environments/environment';
 })
 export class SearchComponent implements OnInit {
 
-  searchBicycle:boolean
+  busqueda_bicicletas:boolean
+  busqueda_rutasCompartidas:boolean
+  busqueda_eventosPrivados:boolean
 
   constructor(private route: Router) { }
 
   ngOnInit(): void {
-    this.searchBicycle = environment.busqueda_bicicletas;
+    this.busqueda_bicicletas = environment.busqueda_bicicletas;
+    this.busqueda_rutasCompartidas = environment.busqueda_rutasCompartidas;
+    this.busqueda_eventosPrivados = environment.busqueda_eventosPrivados;
   }
 
   redirect(routePath) {

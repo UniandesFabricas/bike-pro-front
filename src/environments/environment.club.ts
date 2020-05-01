@@ -15,6 +15,7 @@ export const environment = {
   inscripcion_autenticacion:   true,
   inscripcion_pagos:           false,
   // COMUNIDAD
+  comunidad:                   true,
   comunidad_compartirRuta:     true,
   comunidad_compartirEvento:   true,
   comunidad_muroPublicaciones: true,
