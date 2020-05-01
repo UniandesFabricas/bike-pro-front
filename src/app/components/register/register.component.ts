@@ -10,6 +10,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
   activeBtn = false;
+  selected: string;
 
   constructor(private fb: FormBuilder) { }
 

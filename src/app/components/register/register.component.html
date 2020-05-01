@@ -5,7 +5,7 @@
         <div class="col-12 text-information">Te invitamos a ser parte activa de nuestro gran equipo, regístrate y
             empieza a vivir y disfrutar de los servicios de BikePro.</div>
     </div>
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm" class="position-form">
         <div class="row justify-content-center">
             <input class="col-10 col-md-4 input-style"type="text" id="names" name="names" formControlName="names" required
                 (keyup)="setValueField('names', $event.target.value);" placeholder="Nombres">
@@ -23,6 +23,15 @@
                 (keyup)="setValueField('phone', $event.target.value);"  placeholder="Teléfono">
         </div>
         <div class="row justify-content-center">
+            <mat-form-field class="col-10 col-md-4 input-style">
+                <mat-label>Favorite food</mat-label>
+                <mat-select [(value)]="selected">
+                  <mat-option value="Femenino">Femenino</mat-option>
+                  <mat-option value="Masculino">Masculino</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <p>You selected: {{selected}}</p>
+
             <input class="col-10 col-md-4 input-style"type="text" id="gender" name="gender" formControlName="gender" required
                 (keyup)="setValueField('gender', $event.target.value);"  placeholder="Género">
         </div>

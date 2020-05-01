@@ -6,8 +6,8 @@
     text-align: center;
 }
 
-.margin-2 {
-    margin-top: 2%;
+.margin-dots {
+    margin-top: 5%;
 }
 
 .margin-1 {
@@ -22,3 +22,20 @@
     display: inline-block;
     cursor: pointer;
 }
+
+/**tablets**/
+@media only screen and (max-width: 1024px) {
+    .dot {
+        height: 100px;
+        width: 100px;
+    }
+    
+}
+
+  /**mobile**/
+  @media only screen and (max-width: 767px) {
+    .dot {
+        height: 80px;
+        width: 80px;
+    }
+  }

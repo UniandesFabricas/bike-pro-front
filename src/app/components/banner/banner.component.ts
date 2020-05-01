@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 })
 export class BannerComponent implements OnInit {
 
-  title:string;
+  title: string;
 
   constructor(private route: Router) { }
 

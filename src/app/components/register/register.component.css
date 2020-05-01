@@ -22,3 +22,11 @@
     background-color: #4c7a34;
     font-weight: bold;
 }
+
+.position-form {
+    margin-top: 30px;
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+    display: none;
+}
