@@ -30,5 +30,19 @@ export class UserService {
       }
     );
   }
+
+  login(data): Observable<any> {
+    const dataSend = {
+      username: 'emantilla',
+      password: 'prueba'
+    };
+    return this.httpService.postJson('login', dataSend).map(
+      response => {
+        return response;
+      }, error => {
+        return error;
+      }
+    );
+  }
 }
 
