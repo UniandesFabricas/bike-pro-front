@@ -28,15 +28,15 @@ export class LoginComponent implements OnInit {
 
   public loginUser() {
     const jsonRequest = {
-      username: this.loginForm.get('userName').value,
+      username: this.loginForm.get('user').value,
       password: this.loginForm.get('password').value,
     };
 
     this.userService.login(jsonRequest).subscribe(
         response => {
-          alert('Usuario creado satisfactoriamente');
+          alert('Usuario autenticado satisfactoriamente');
         }, error => {
-          alert('Error creando el usuario, intente nuevamente');
+          alert('Error ingresando el usuario, intente nuevamente');
         }
       );
   }
