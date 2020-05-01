@@ -4,12 +4,13 @@
         <div class="col-12 text-title text-center">Disfruta y arma tu mejor plan</div>
     </div>
     <div class="row margin-dots justify-content-center">
-        <div class="col-8 col-md-3 col-lg-2 text-center">
-            <div class="dot">
+        <div *ngIf="searchBicycle" class="col-8 col-md-3 col-lg-2 text-center">
+            <div class="dot" (click)="redirect('maps')">
                 <div class="icon-bike postion-icon-dot"></div>
             </div>
             <div class="text-option">Bicicletas</div>
         </div>
+
         <div class="col-8 col-md-3 col-lg-2 text-center">
             <div class="dot">
                 <div class="icon-route postion-icon-dot"></div>

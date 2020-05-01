@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { GoogleMapsModule } from "@angular/google-maps";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { CommunityComponent } from './components/community/community.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
+import { MapsComponent } from './components/maps/maps.component';
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { MatSelectModule } from '@angular/material/select';
     RegisterComponent,
     SearchComponent,
     AccountComponent,
-    CommunityComponent
+    CommunityComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
