@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
 })
 export class AccountComponent implements OnInit {
 
+  showAll = true;
+
   constructor(private route: Router) { }
 
   ngOnInit(): void {
+    this.showAll = sessionStorage.getItem('userAuth') !== undefined && sessionStorage.getItem('userAuth') !== null
+     && sessionStorage.getItem('userAuth') === 'true' ? false : true;
   }
 
   redirect(routePath) {

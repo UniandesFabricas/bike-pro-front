@@ -41,6 +41,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.close-session {
+    text-align: right;
+    padding-right: 9%;
+    color: green;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 
 /**tablets**/
 @media only screen and (max-width: 1024px) {

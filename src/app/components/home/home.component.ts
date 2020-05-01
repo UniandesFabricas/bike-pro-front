@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   }
 
   redirect(routePath) {
-    console.log('routePath', routePath);
     this.route.navigate([routePath]);
   }
 
