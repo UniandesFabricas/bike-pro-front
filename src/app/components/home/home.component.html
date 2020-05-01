@@ -13,7 +13,7 @@
             </div>
             <div class="text-option">Búsquedas</div>
         </div>
-        <div class="col-8 col-md-3 col-lg-2 text-center">
+        <div *ngIf="comunidad" class="col-8 col-md-3 col-lg-2 text-center">
             <div class="dot" (click)="redirect('community')">
                 <div class="icon-media postion-icon-dot"></div>
             </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {UserService} from '../../services/user-service/user.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'ab-home',
@@ -9,9 +10,13 @@ import {UserService} from '../../services/user-service/user.service';
 })
 export class HomeComponent implements OnInit {
 
+  comunidad:boolean
+
   constructor(private route: Router, private userService: UserService) { }
 
   ngOnInit(): void {
+    this.comunidad = environment.comunidad;
+
   }
 
   redirect(routePath) {
