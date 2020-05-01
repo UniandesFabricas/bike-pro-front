@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   constructor(private route: Router) { }
 
   ngOnInit(): void {
-    this.searchBicycle = Products.Alquiler === environment.product;
+    this.searchBicycle = environment.busqueda_bicicletas;
   }
 
   redirect(routePath) {
