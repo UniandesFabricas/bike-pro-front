@@ -18,10 +18,7 @@
           <mat-form-field class="col-10 col-md-4 input-style">
               <mat-label *ngIf="selected === undefined">Tipo de documento</mat-label>
               <mat-select [(value)]="selected" (selectionChange) ="setValueField('typeDocument', selected);" formControlName="typeDocument" id="gender" name="gender">
-                <mat-option value="Cédula">Cédula</mat-option>
-                <mat-option value="Tarjeta Identidad">Tarjeta Identidad</mat-option>
-                <mat-option value="Pasaporte">Pasaporte</mat-option>
-                <mat-option value="Nit">Nit</mat-option>
+                <mat-option *ngFor="let item of arrayTypeDocs" value="item.value">{{item.name}}</mat-option>
               </mat-select>
             </mat-form-field>
       </div>

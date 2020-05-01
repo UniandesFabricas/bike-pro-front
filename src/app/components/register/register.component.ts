@@ -13,20 +13,25 @@ export class RegisterComponent implements OnInit {
   activeBtn = false;
   selected: string;
   placeHolderDate = 'Fecha de nacimiento';
+  arrayTypeDocs = [
+    { name: 'Tarjeta de Identidad', value: 'TARJETA_IDENTIDAD' },
+    { name: 'Cédula', value: 'CEDULA' },
+    { name: 'Cédula de Extranjería', value: 'CEDULA_EXTRANJERIA' },
+    { name: 'Pasaporte', value: 'PASAPORTE' }
+  ];
 
   constructor(private fb: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
-
     this.registerForm = this.fb.group({
-      userName:  ['', Validators.compose([Validators.required])],
-      name:  ['', Validators.compose([Validators.required])],
-      typeDocument:  ['', Validators.compose([Validators.required])],
-      numberDocument:  ['', Validators.compose([Validators.required])],
-      email:  ['', Validators.compose([Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])],
-      bornDate:  ['', Validators.compose([Validators.required])],
-      password:  ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-      rePassword:  ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+      userName: ['', Validators.compose([Validators.required])],
+      name: ['', Validators.compose([Validators.required])],
+      typeDocument: ['', Validators.compose([Validators.required])],
+      numberDocument: ['', Validators.compose([Validators.required])],
+      email: ['', Validators.compose([Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])],
+      bornDate: ['', Validators.compose([Validators.required])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+      rePassword: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
     });
   }
 
@@ -55,12 +60,12 @@ export class RegisterComponent implements OnInit {
     };
 
     this.userService.createUser(jsonRequest).subscribe(
-        response => {
-          alert('Usuario creado satisfactoriamente');
-        }, error => {
-          alert('Error creando el usuario, intente nuevamente');
-        }
-      );
+      response => {
+        alert('Usuario creado satisfactoriamente');
+      }, error => {
+        alert('Error creando el usuario, intente nuevamente');
+      }
+    );
   }
 
 }

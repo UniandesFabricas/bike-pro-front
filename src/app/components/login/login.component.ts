@@ -21,20 +21,18 @@ export class LoginComponent implements OnInit {
     });
   }
 
-
   setValueField(field, value) {
     this.loginForm.get(field).setValue(value);
     this.activeBtn = this.loginForm.status === 'VALID' ? true : false;
   }
 
-
   public loginUser() {
     const jsonRequest = {
-      user: this.loginForm.get('userName').value,
+      username: this.loginForm.get('userName').value,
       password: this.loginForm.get('password').value,
     };
 
-    this.userService.createUser(jsonRequest).subscribe(
+    this.userService.login(jsonRequest).subscribe(
         response => {
           alert('Usuario creado satisfactoriamente');
         }, error => {
