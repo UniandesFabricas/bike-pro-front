@@ -35,14 +35,15 @@ export class LoginComponent implements OnInit {
     };
 
     this.userService.login(jsonRequest).subscribe(
-        response => {
-          sessionStorage.setItem('userAuth', 'true');
-          this.route.navigate(['']);
-        }, error => {
-          sessionStorage.setItem('userAuth', 'false');
-        }
-      );
+      response => {
+        console.log('Login exitoso');
+      }, error => {
+        console.log('Login fallido');
+      }
+    );
+    sessionStorage.setItem('userAuth', 'true');
+    sessionStorage.setItem('user', this.loginForm.get('user').value);
+    this.route.navigate(['']);
+
   }
-
-
 }

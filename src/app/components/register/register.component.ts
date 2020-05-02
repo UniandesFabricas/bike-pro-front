@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user-service/user.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'ab-register',
@@ -20,7 +22,7 @@ export class RegisterComponent implements OnInit {
     { name: 'Pasaporte', value: 'PASAPORTE' }
   ];
 
-  constructor(private fb: FormBuilder, private userService: UserService) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private route: Router) { }
 
   ngOnInit() {
     this.registerForm = this.fb.group({
@@ -62,11 +64,14 @@ export class RegisterComponent implements OnInit {
 
     this.userService.createUser(jsonRequest).subscribe(
       response => {
-        alert('Usuario creado satisfactoriamente');
+        console.log('registro exitoso');
       }, error => {
-        alert('Error creando el usuario, intente nuevamente');
+        console.log('Registro fallido');
       }
     );
+    sessionStorage.setItem('userAuth', 'true');
+    sessionStorage.setItem('user', this.registerForm.get('userName').value );
+    this.route.navigate(['']);
   }
 
   public formatDate() {
