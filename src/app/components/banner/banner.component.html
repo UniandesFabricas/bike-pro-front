@@ -2,5 +2,5 @@
     <img src="..\..\assets\images\banner.png" class="width-header">
     <div class="text-profile">{{title}}</div>
     <div class="icon-home position-icon" (click)="goHome()"></div>
-    <div *ngIf="hasLogin" class="col-12 close-session" (click)="closeSession()">Cerrar session</div>
+    <div *ngIf="hasLogin" class="col-12 close-session" (click)="closeSession()">{{user}} | Cerrar session</div>
 </div>

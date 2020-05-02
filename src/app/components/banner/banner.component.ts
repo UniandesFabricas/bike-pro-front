@@ -11,6 +11,7 @@ export class BannerComponent implements OnInit {
 
   title: string;
   hasLogin = false;
+  user = '';
 
   constructor(private route: Router) { }
 
@@ -18,6 +19,9 @@ export class BannerComponent implements OnInit {
     this.title = environment.product;
     this.hasLogin = sessionStorage.getItem('userAuth') !== undefined && sessionStorage.getItem('userAuth') !== null
     && sessionStorage.getItem('userAuth') === 'true' ? true : false;
+    this.user = sessionStorage.getItem('user') !== undefined &&
+    sessionStorage.getItem('user') !== null ?
+    sessionStorage.getItem('user') : '';
   }
 
   goHome() {
