@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ab-community',
@@ -14,12 +15,16 @@ export class CommunityComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
     this.comunidad_compartirRuta = environment.comunidad_compartirRuta;
     this.comunidad_compartirEvento = environment.comunidad_compartirEvento;
     this.comunidad_muroPublicaciones = environment.comunidad_muroPublicaciones;
+  }
+
+  redirect(routePath) {
+    this.route.navigate([routePath]);
   }
 
 }

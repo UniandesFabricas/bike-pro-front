@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CommunityComponent } from './components/community/community.component';
 import { MapsComponent } from './components/maps/maps.component';
 import { LoginComponent } from './components/login/login.component';
+import { MuroPublicacionesComponent } from './components/muroPublicaciones/muroPublicaciones.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'maps', component: MapsComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'muroPublicaciones', component: MuroPublicacionesComponent}
 ];
 
 @NgModule({

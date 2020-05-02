@@ -19,7 +19,7 @@ import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
-
+import { MuroPublicacionesComponent } from './components/muroPublicaciones/muroPublicaciones.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { MatInputModule} from '@angular/material/input';
     AccountComponent,
     CommunityComponent,
     MapsComponent,
-    LoginComponent
+    LoginComponent,
+    MuroPublicacionesComponent
   ],
   imports: [
     BrowserModule,
