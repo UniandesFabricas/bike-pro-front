@@ -12,9 +12,14 @@ export class MapsComponent implements OnInit {
 
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow
 
-  infoContent = ''
+  infoContent = {
+      title :'',
+      imgUrl:'',
+      desc:'',
+      stock:''
+  }
   markers = []
-  zoom = 14
+  zoom = 12
   center: google.maps.LatLngLiteral
   options: google.maps.MapOptions = {
     //mapTypeId: 'ROADMAP',
@@ -30,6 +35,7 @@ export class MapsComponent implements OnInit {
 
   ngOnInit(): void {
 
+  
     navigator.geolocation.getCurrentPosition(position => {
       console.log('lat: ', position.coords.latitude);
       console.log('log: ', position.coords.longitude);
@@ -37,6 +43,7 @@ export class MapsComponent implements OnInit {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       }
+     
     })
     this.addMarker();
   }
@@ -46,35 +53,44 @@ export class MapsComponent implements OnInit {
    * Agrega marcadores al mapa
    */
   addMarker() {
-    this.searchService.searchStations().forEach(station => {
+    this.searchService.searchStations().subscribe(resp => 
+      resp.forEach(station => {
+       
+           this.markers.push({
+            position: {
+              lat: station.startPoint.latitude,
+              lng: station.startPoint.longitude,
+            },
+           
+            info: {
+                    title: station.name ,
+                    imgUrl: station.imageUrl,
+                    desc: station.description,
+                    stock: station.stock.length
+            },
+            title: 'BikePro', 
+            options: {
+                      animation: google.maps.Animation.DROP, 
+                      icon: station.stock.length > 0 ? 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/64/Map-Marker-Ball-Chartreuse-icon.png' :
+                      'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/64/Map-Marker-Ball-Pink-icon.png'
+                      
+                    },
+           
+          })
+            })
 
-      this.markers.push({
-        position: {
-          lat: station.startPoint.latitude,
-          lng: station.startPoint.longitude,
-        },
-        label: {
-          color: 'red',
-          text: station.name,
-        },
-        title: station.name,
-        info: station.description,
-        options: { animation: google.maps.Animation.BOUNCE },
-      })
-
-});
-
-
+    )
+   
   }
-
+  openInfo(marker: MapMarker, info) {
+    this.infoContent = info;
+    this.info.open(marker);
+  }
   click(event: google.maps.MouseEvent) {
 
     console.log(JSON.stringify(event));
   }
 
-  openInfo(marker: MapMarker, content) {
-    this.infoContent = content
-    this.info.open(marker)
-  }
+  
 
 }
