@@ -20,7 +20,17 @@
 >
   >
   </map-marker>
-  <map-info-window>{{ infoContent }}</map-info-window>
+  <map-info-window>
+    <h1>{{infoContent.title}}</h1>
+    <img src={{infoContent.imgUrl}}/>
+    <br>
+    <br>
+    {{infoContent.desc}}
+    <br>
+    <h3>Bicicletas disponibles: {{infoContent.stock}}</h3>
+    
+    <button *ngIf="infoContent.stock">Reservar</button>
+  </map-info-window>
   </google-map>
 
 
